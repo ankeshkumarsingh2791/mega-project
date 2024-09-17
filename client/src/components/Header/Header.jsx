@@ -1,7 +1,7 @@
 import React from 'react'
 import {Container, Logo, LogoutBtn} from '../index'
 import { Link } from 'react-router-dom'
-import {useSelector} from 'react-redux'
+import {useSelector} from 'react-redux' // it is use to see user is login in or logout
 import { useNavigate } from 'react-router-dom'
 
 function Header() {
@@ -20,8 +20,8 @@ function Header() {
       active: !authStatus,
   },
   {
-      name: "Signup",
-      slug: "/signup",
+      name: "Sign up",
+      slug: "/sign up",
       active: !authStatus,
   },
   {
@@ -58,7 +58,7 @@ function Header() {
               </li>
             ) : null
             )}
-            {authStatus && (
+            {authStatus && ( // logout check kr le 
               <li>
                 <LogoutBtn />
               </li>
