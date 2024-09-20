@@ -5,6 +5,8 @@ import Logo from "./Logo";
 import LogoutBtn from "./Header/LogoutBtn";
 import Button from "./Button"
 import RTE from './RTE'
+import Register from './Register'
+import Login from './Login' 
 
 export {
     Header,
@@ -13,6 +15,8 @@ export {
     Logo,
     LogoutBtn,
     Button,
-    RTE
+    RTE,
+    Register,
+    Login
   
 }
