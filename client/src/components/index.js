@@ -7,7 +7,10 @@ import Button from "./Button"
 import RTE from './RTE'
 import Register from './Register'
 import Login from './Login' 
-
+import PostCard from './PostCard'
+import Input from './Input'
+import Select from './Select'
+import AuthLayout from './AuthLayout'
 export {
     Header,
     Footer,
@@ -17,6 +20,10 @@ export {
     Button,
     RTE,
     Register,
-    Login
+    Login,
+    PostCard,
+    Input,
+    Select,
+    AuthLayout
   
 }

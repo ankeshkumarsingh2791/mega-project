@@ -1,8 +1,15 @@
-import React from 'react'
 
-const AddPost = () => {
+import React from 'react'
+import  PostForm  from '../components/Post-form/PostForm'
+import { Container } from '../components'
+
+function AddPost() {
   return (
-    <div>AddPost</div>
+    <div className='py-8'>
+        <Container>
+            <PostForm />
+        </Container>
+    </div>
   )
 }
 
