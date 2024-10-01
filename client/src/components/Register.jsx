@@ -4,7 +4,9 @@ import {Link} from "react-router-dom"
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import authService from '../appwrite/auth'
-import {Button, Input, Logo} from './index'
+import Button from '../components/Button.jsx'
+import Logo from './Logo.jsx'
+import Input from './Input.jsx'
 import { login } from '../Store/authSlice'
 
 

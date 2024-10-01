@@ -1,28 +1,33 @@
-import React, { useState } from 'react'
-import {login as authLogin} from '../Store/authSlice'
-import {Button, Input, Logo} from './index'
-import { useDispatch } from 'react-redux'
-import authService from '../appwrite/auth'
+import React, {useState} from 'react'
+import {Link, useNavigate} from 'react-router-dom'
+import { login as authLogin } from '../Store/authSlice'
+import Button from '../components/Button.jsx'
+import Logo from './Logo.jsx'
+import Input from './Input.jsx'
+import {useDispatch} from "react-redux"
+import authService from "../appwrite/auth"
 import {useForm} from "react-hook-form"
-import { useNavigate } from 'react-router-dom'
-const Login = () => {
-    const navigate  = useNavigate()
+
+function Login() {
+    const navigate = useNavigate()
     const dispatch = useDispatch()
-    const {register, handelSubmit} = useForm()
-    const[error, setError] = useState("")
+    const {register, handleSubmit} = useForm()
+    const [error, setError] = useState("")
+
     const login = async(data) => {
         setError("")
         try {
-          const session =    await authService.login(data) 
-          if(session) {
-            const userData = await authService.getCurrentUser()// checking user is login or not
-            if(userData) dispatch(authLogin(userData));
-            navigate("/")
-          }
+            const session = await authService.login(data)
+            if (session) {
+                const userData = await authService.getCurrentUser()
+                if(userData) dispatch(authLogin(userData));
+                navigate("/")
+            }
         } catch (error) {
-          setError(error.message)  
+            setError(error.message)
         }
     }
+
   return (
     <div
     className='flex items-center justify-center w-full'
@@ -37,7 +42,7 @@ const Login = () => {
         <p className="mt-2 text-center text-base text-black/60">
                     Don&apos;t have any account?&nbsp;
                     <Link
-                        to="/signUp"
+                        to="/signup"
                         className="font-medium text-primary transition-all duration-200 hover:underline"
                     >
                         Sign Up

@@ -1,11 +1,14 @@
 import React, { useCallback } from 'react'
-import {Button, Input, Select, RTE} from '../index'
-import appwriteService from "../../appwrite/config"   
+import Button from '../Button.jsx'
+import Input from '../Input.jsx'
+import Select from '../Select.jsx'
+import RTE from '../RTE.jsx'
+import appwriteService from "../../appwrite/config.js"   
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 const PostForm = ({post}) => {
-    const {register, handelSubmit, watch, setValue, control, getValues} = useForm({
+    const {register, watch, setValue, control, getValues} = useForm({
      defaultValues: {
         title: post ?.title || '',
         slug: post?.slug || '',
